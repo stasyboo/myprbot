@@ -93,16 +93,11 @@ async def subscribe(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Подписка доступна: https://paywall.pw/ordbjzar2xdy"
     )
 
-async def main():
+if __name__ == '__main__':
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("subscribe", subscribe))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
 
-    await app.run_polling()
-
-if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
-
+    app.run_polling()
