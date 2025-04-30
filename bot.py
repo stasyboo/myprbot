@@ -73,7 +73,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=course_menu
         )
 
-    elif text == "Да, пожалуйста":
+    elif text == "Пришлите цены":
         await update.message.reply_text(
             "ТАРИФ 1\nДоступ только к программе обучения — 110 000 рублей\n\n"
             "ТАРИФ 2\nДоступ к программе обучения + печатный воркбук + 2 онлайн-мастермайнда — 150 000 рублей\n\n"
@@ -82,7 +82,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=back_menu
         )
 
-    elif text == "Нет, не актуально" or text == "Вернуться назад":
+    elif text == "Не актуально" or text == "Вернуться назад":
         await update.message.reply_text(
             "Что вас интересует?",
             reply_markup=main_menu
