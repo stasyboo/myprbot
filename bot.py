@@ -103,7 +103,7 @@ async def main():
     await app.initialize()
     await app.run_polling() 
 
-
 if __name__ == '__main__':
     import asyncio
-    asyncio.run(app.run_polling())
+    asyncio.run(main())
+
