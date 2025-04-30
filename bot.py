@@ -101,7 +101,17 @@ async def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
 
     await app.initialize()
-    await app.run_polling() 
+    await app.bot.set_webhook(
+        url=f"https://{RENDER_EXTERNAL_HOSTNAME}/telegram",
+        drop_pending_updates=True,
+    )
+
+    await app.start()
+    await app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_path="/telegram",
+    ) 
 
 if __name__ == '__main__':
     import asyncio
