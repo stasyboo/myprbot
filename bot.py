@@ -14,13 +14,13 @@ logging.basicConfig(level=logging.INFO)
 start_buttons = [
     ["Получить запись эфира 27 апреля 2025 года"],
     ["Записаться на консультацию"],
-    ["Задать вопрос или отправить предложение для ablab.pro или Анастасии Бурмистровой"],
+    ["Отправить предложение для ablab.pro или Анастасии"],
     ["Узнать детали PR-обучения"]
 ]
 
 back_button = [["Вернуться назад"]]
 
-course_buttons = [["Да, пожалуйста"], ["Нет, не актуально"], ["Вернуться назад"]]
+course_buttons = [["Пришлите цены"], ["Не актуально"], ["Вернуться назад"]]
 
 main_menu = ReplyKeyboardMarkup(start_buttons, resize_keyboard=True)
 back_menu = ReplyKeyboardMarkup(back_button, resize_keyboard=True)
